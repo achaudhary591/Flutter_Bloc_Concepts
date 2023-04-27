@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_bloc_concept/counter_cubit.dart';
+import 'package:flutter_bloc_concept/cubit/counter_cubit.dart';
 
 void main() {
   runApp(const MyApp());
@@ -65,7 +65,7 @@ class _MyHomePageState extends State<MyHomePage> {
               'You have pushed the button this many times:',
             ),
             BlocConsumer<CounterCubit, CounterState>(
-              listener: (context, state) {
+              his.counterValue,this.wasIncrementedlistener: (context, state) {
                 if (state.wasIncremented == true) {
                   ScaffoldMessenger.of(context).showSnackBar(
                     const SnackBar(
