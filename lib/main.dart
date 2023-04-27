@@ -64,27 +64,41 @@ class _MyHomePageState extends State<MyHomePage> {
             const Text(
               'You have pushed the button this many times:',
             ),
-            BlocBuilder<CounterCubit , CounterState>(
+            BlocConsumer<CounterCubit, CounterState>(
+              listener: (context, state) {
+                if (state.wasIncremented == true) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      content: Text('Increment'),
+                      duration: Duration(milliseconds: 200),
+                    ),
+                  );
+                } else {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      content: Text('Decrement'),
+                      duration: Duration(milliseconds: 200),
+                    ),
+                  );
+                }
+              },
               builder: (context, state) {
-                if(state.counterValue < 0){
+                if (state.counterValue < 0) {
                   return Text(
                     'BRR, NEGATIVE ${state.counterValue}',
                     style: Theme.of(context).textTheme.headlineLarge,
                   );
-                }
-                else if(state.counterValue % 2 == 0){
+                } else if (state.counterValue % 2 == 0) {
                   return Text(
                     'YAAAY! ${state.counterValue}',
                     style: Theme.of(context).textTheme.headlineLarge,
                   );
-                }
-                else if(state.counterValue % 5 == 0){
+                } else if (state.counterValue % 5 == 0) {
                   return Text(
                     'HMMMM, number ${state.counterValue}',
                     style: Theme.of(context).textTheme.headlineLarge,
                   );
-                }
-                else{
+                } else {
                   return Text(
                     '${state.counterValue}',
                     style: Theme.of(context).textTheme.headlineLarge,
@@ -99,7 +113,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   onPressed: () {
                     BlocProvider.of<CounterCubit>(context).decrement();
                   },
-                  tooltip: 'Increment',
+                  tooltip: 'Decrement',
                   child: const Icon(Icons.remove),
                 ),
                 FloatingActionButton(
