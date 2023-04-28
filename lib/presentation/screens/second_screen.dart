@@ -104,17 +104,7 @@ class _SecondScreenState extends State<SecondScreen> {
             ),
             MaterialButton(
               onPressed: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (_) => BlocProvider.value(
-                      value: BlocProvider.of<CounterCubit>(context),
-                      child: const HomeScreen(
-                        title: 'Third Screen',
-                        color: Colors.blueAccent,
-                      ),
-                    ),
-                  ),
-                );
+                Navigator.of(context).pushNamed('/');
               },
               color: widget.color,
               child: const Text('Go to back to Home Screen'),
@@ -122,17 +112,7 @@ class _SecondScreenState extends State<SecondScreen> {
             const SizedBox(height: 20,),
             MaterialButton(
               onPressed: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (_) => BlocProvider.value(
-                      value: BlocProvider.of<CounterCubit>(context),
-                      child: const ThirdScreen(
-                        title: 'Third Screen',
-                        color: Colors.greenAccent,
-                      ),
-                    ),
-                  ),
-                );
+                Navigator.of(context).pushNamed('/third');
               },
               color: widget.color,
               child: const Text('Go to Third Screen'),
