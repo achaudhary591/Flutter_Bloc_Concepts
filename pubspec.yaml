@@ -39,6 +39,8 @@ dependencies:
   test: ^1.22.0
   bloc_test: ^9.1.1
   equatable: ^2.0.5
+  connectivity_plus: ^3.0.6
+  http: ^0.13.5
 
 dev_dependencies:
   flutter_test:
@@ -92,3 +94,6 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+  assets:
+    - assets/img.gif
+

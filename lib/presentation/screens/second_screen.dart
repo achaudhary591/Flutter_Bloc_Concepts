@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_bloc_concept/presentation/screens/home_screen.dart';
-import 'package:flutter_bloc_concept/presentation/screens/third_screen.dart';
-import '../../cubit/counter_cubit.dart';
+
+import '../../logic/cubit/counter_cubit.dart';
 
 class SecondScreen extends StatefulWidget {
   const SecondScreen({Key? key, required this.title, required this.color})
