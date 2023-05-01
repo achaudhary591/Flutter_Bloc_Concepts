@@ -35,14 +35,14 @@ class _SecondScreenState extends State<SecondScreen> {
                   ScaffoldMessenger.of(context).showSnackBar(
                     const SnackBar(
                       content: Text('Increment'),
-                      duration: Duration(milliseconds: 200),
+                      duration: Duration(milliseconds: 100),
                     ),
                   );
                 } else {
                   ScaffoldMessenger.of(context).showSnackBar(
                     const SnackBar(
                       content: Text('Decrement'),
-                      duration: Duration(milliseconds: 200),
+                      duration: Duration(milliseconds: 100),
                     ),
                   );
                 }
