@@ -3,10 +3,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_concept/presentation/screens/home_screen.dart';
 
 import '../screens/second_screen.dart';
+import '../screens/settings_screen.dart';
 import '../screens/third_screen.dart';
 
 class AppRouter {
-
   Route? onGenerateRoute(RouteSettings routeSettings) {
     switch (routeSettings.name) {
       case '/':
@@ -16,7 +16,6 @@ class AppRouter {
             color: Colors.blueAccent,
           ),
         );
-        break;
       case '/second':
         return MaterialPageRoute(
           builder: (_) => const SecondScreen(
@@ -24,7 +23,6 @@ class AppRouter {
             color: Colors.orangeAccent,
           ),
         );
-        break;
       case '/third':
         return MaterialPageRoute(
           builder: (_) => const ThirdScreen(
@@ -32,7 +30,10 @@ class AppRouter {
             color: Colors.greenAccent,
           ),
         );
-        break;
+      case '/settings':
+        return MaterialPageRoute(
+          builder: (_) => SettingsScreen(),
+        );
       default:
         return null;
     }

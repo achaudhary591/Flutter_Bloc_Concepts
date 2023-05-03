@@ -48,6 +48,12 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         backgroundColor: widget.color,
         title: Text(widget.title),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.settings),
+            onPressed: () => Navigator.pushNamed(context, '/settings'),
+          ),
+        ],
       ),
       body: Center(
         child: Column(
@@ -78,8 +84,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           color: Colors.grey,
                         ),
                   );
-                }
-                else{
+                } else {
                   return Container();
                 }
               },
@@ -157,7 +162,8 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             Builder(
               builder: (context) {
-                final counterValue = context.select((CounterCubit cubit) => cubit.state.counterValue);
+                final counterValue = context
+                    .select((CounterCubit cubit) => cubit.state.counterValue);
                 return Text(
                   'Counter: $counterValue',
                   style: Theme.of(context).textTheme.headlineLarge,

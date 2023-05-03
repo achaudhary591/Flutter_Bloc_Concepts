@@ -8,6 +8,11 @@ class InternetLoading extends InternetState {}
 class InternetConnected extends InternetState {
   final ConnectionType connectionType;
 
+  @override
+  String toString() {
+    return 'InternetConnected{connectionType: $connectionType}';
+  }
+
   InternetConnected({required this.connectionType});
 }
 
