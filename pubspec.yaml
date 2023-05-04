@@ -39,10 +39,10 @@ dependencies:
   test: ^1.22.0
   bloc_test: ^9.1.1
   equatable: ^2.0.5
-  connectivity_plus: ^3.0.6
   http: ^0.13.5
   hydrated_bloc: ^9.1.0
   path_provider: ^2.0.14
+  connectivity: ^3.0.6
 
 dev_dependencies:
   flutter_test:
@@ -98,4 +98,5 @@ flutter:
   # see https://flutter.dev/custom-fonts/#from-packages
   assets:
     - assets/img.gif
+    - assets/connected.gif
 

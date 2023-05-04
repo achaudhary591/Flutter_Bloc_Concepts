@@ -3,8 +3,8 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:connectivity/connectivity.dart';
 import 'package:meta/meta.dart';
-import 'package:connectivity_plus/connectivity_plus.dart';
 
 import '../../constants/enums.dart';
 

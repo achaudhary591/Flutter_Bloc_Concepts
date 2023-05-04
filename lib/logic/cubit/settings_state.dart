@@ -21,8 +21,8 @@ class SettingsState extends Equatable {
 
   @override
   List<Object> get props => [
-        emailNotifications!,
-        appNotifications!,
+        emailNotifications,
+        appNotifications,
       ];
 
   /*factory SettingsState.fromJson(Map<String, dynamic> json) {
