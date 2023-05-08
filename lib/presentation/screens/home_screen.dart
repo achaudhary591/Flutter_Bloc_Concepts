@@ -216,6 +216,16 @@ class _HomeScreenState extends State<HomeScreen> {
               color: widget.color,
               child: const Text('Go to Third Screen'),
             ),
+            const SizedBox(
+              height: 40,
+            ),
+            MaterialButton(
+              onPressed: () {
+                Navigator.of(context).pushNamed('/api');
+              },
+              color: widget.color,
+              child: const Text('API Handling'),
+            ),
           ],
         ),
       ),

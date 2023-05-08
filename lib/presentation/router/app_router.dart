@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_concept/presentation/screens/home_screen.dart';
 
+import '../screens/api_handling_screen.dart';
 import '../screens/second_screen.dart';
 import '../screens/settings_screen.dart';
 import '../screens/third_screen.dart';
@@ -33,6 +34,10 @@ class AppRouter {
       case '/settings':
         return MaterialPageRoute(
           builder: (_) => SettingsScreen(),
+        );
+      case '/api':
+        return MaterialPageRoute(
+          builder: (_) => ApiHandlingScreen(),
         );
       default:
         return null;

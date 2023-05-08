@@ -1,7 +1,12 @@
+import 'dart:developer';
+
 import 'package:connectivity/connectivity.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_bloc_concept/data/post_model.dart';
+import 'package:flutter_bloc_concept/data/repository/post_repository.dart';
 import 'package:flutter_bloc_concept/logic/bloc/bloc/internet_bloc_bloc.dart';
+import 'package:flutter_bloc_concept/logic/cubit/post_cubit/cubit/post_cubit.dart';
 import 'package:flutter_bloc_concept/logic/cubit/settings_cubit.dart';
 import 'package:flutter_bloc_concept/logic/utility/app_bloc_observer.dart';
 import 'package:flutter_bloc_concept/presentation/router/app_router.dart';
@@ -12,12 +17,16 @@ import 'logic/cubit/internet_cubit.dart';
 import 'package:path_provider/path_provider.dart';
 
 void main() async {
+
   WidgetsFlutterBinding.ensureInitialized();
 
   HydratedBloc.storage = await HydratedStorage.build(
-      storageDirectory: await getApplicationDocumentsDirectory());
+      storageDirectory: await getApplicationDocumentsDirectory());  
 
   Bloc.observer = AppBlocObserver();
+
+  // PostRepository postRepository = PostRepository();
+  // List<PostModel> postModels = await postRepository.fetchPosts();
 
   runApp(MyApp(
     appRouter: AppRouter(),
@@ -51,6 +60,9 @@ class MyApp extends StatelessWidget {
         BlocProvider<InternetBlocBloc>(
           create: (context) => InternetBlocBloc(),
           // lazy: false,
+        ),
+        BlocProvider<PostCubit>(
+          create: (context) => PostCubit(),
         ),
       ],
       child: MaterialApp(

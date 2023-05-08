@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_bloc_concept/constants/enums.dart';
 import 'package:flutter_bloc_concept/logic/bloc/bloc/internet_bloc_bloc.dart';
 
 import '../../logic/cubit/settings_cubit.dart';
