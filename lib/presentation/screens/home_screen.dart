@@ -62,7 +62,7 @@ class _HomeScreenState extends State<HomeScreen> {
             BlocBuilder<InternetCubit, InternetState>(
               builder: (context, state) {
                 if (state is InternetConnected &&
-                    state.connectionType == ConnectionType.Wifi) {
+                    (state.connectionType == ConnectionType.Wifi && (state.connectionType == ConnectionType.Mobile || state.connectionType != ConnectionType.Mobile))) {
                   return Text(
                     'Wi-Fi',
                     style: Theme.of(context).textTheme.headlineLarge!.copyWith(
@@ -70,7 +70,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                   );
                 } else if (state is InternetConnected &&
-                    state.connectionType == ConnectionType.Mobile) {
+                    (state.connectionType == ConnectionType.Mobile && state.connectionType != ConnectionType.Wifi)) {
                   return Text(
                     'Mobile',
                     style: Theme.of(context).textTheme.headlineLarge!.copyWith(
@@ -152,7 +152,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 );
               } else {
                 return Text(
-                  'Counter: ${counterState.counterValue} Internet: Disconnected',
+                  'Counter: ${counterState.counterValue} Internet: Dis',
                   style: Theme.of(context).textTheme.headlineLarge,
                 );
               }
